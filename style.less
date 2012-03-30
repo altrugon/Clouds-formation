@@ -1,0 +1,145 @@
+/*
+ * Functions
+ */
+ 
+/* Animation */
+
+/*  animation: [<name> || <duration> || <timing-function> || <delay> || <iteration-count> || <direction> || <fill-mode>] */
+.animate (@name, @duration: 0s, @timing_function: ease, @delay: 0s, @iteration-count: 1, @direction: normal, @fill_mode: none) {
+  -moz-animation: @name @duration @timing_function @delay @iteration-count @direction @fill_mode;
+  -ms-animation: @name @duration @timing_function @delay @iteration-count @direction @fill_mode;
+  -o-animation: @name @duration @timing_function @delay @iteration-count @direction @fill_mode;
+  -webkit-animation: @name @duration @timing_function @delay @iteration-count @direction @fill_mode;
+  animation: @name @duration @timing_function @delay @iteration-count @direction @fill_mode;
+}
+
+/* key Frames */
+
+@-moz-keyframes fadein {
+  0% { opacity: 0; }
+  50% { opacity: 0.4; }
+  80% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+  0% { opacity: 0; }
+  50% { opacity: 0.4; }
+  80% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes startrain {  
+  0% { top: -800px; }
+  100% { top: 0px; }
+}
+
+@-webkit-keyframes startrain {  
+  0% { top: -800px; }
+  100% { top: 0px; }
+}
+
+@-moz-keyframes keeprain {  
+  0% {
+    background-position: -212px 100%;
+  }
+  100% {
+    background-position: -212px 0;
+  }
+}
+
+@-webkit-keyframes keeprain {  
+  0% {
+    background-position: -212px 100%;
+  }
+  100% {
+    background-position: -212px 0;
+  }
+}
+
+/* Style */
+body {
+  background: url(images/field.png) no-repeat center top;
+}
+
+.cloud {
+  opacity: 0;
+  position: absolute;
+}
+
+#clouds {
+  margin: 0 auto;
+  position: relative;
+  width: 230px;
+}
+
+#cloud-1 {
+  .animate(fadein, 3s, linear, 0s, 1, normal, forwards);
+  background: url(images/cloud1.png) no-repeat 0 0;
+  height: 49px;
+  left: 11px;
+  top: 40px;
+  width: 69px;
+  z-index: 1;
+}
+
+#cloud-2 {
+  .animate(fadein, 4.5s, linear, 0s, 1, normal, forwards);
+  background: url(images/cloud2.png) no-repeat 0 0;
+  height: 45px;
+  left: 126px;
+  top: 40px;
+  width: 76px;
+  z-index: 2;
+}
+
+#cloud-3 {
+  .animate(fadein, 3s, linear, 0s, 1, normal, forwards);
+  background: url(images/cloud3.png) no-repeat 0 0;
+  height: 70px;
+  left: 107px;
+  top: 22px;
+  width: 107px;
+  z-index: 3;
+}
+
+#cloud-4 {
+  .animate(fadein, 6s, linear, 1s, 1, normal, forwards);
+  background: url(images/cloud4.png) no-repeat 0 0;
+  height: 106px;
+  left: 64px;
+  top: 4px;
+  width: 121px;
+  z-index: 4;
+}
+
+#cloud-5 {
+  .animate(fadein, 8s, linear, 2s, 1, normal, forwards);
+  background: url(images/cloud5.png) no-repeat 0 0;
+  height: 104px;
+  opacity: 0;
+  width: 227px;
+  z-index: 5;
+}
+
+#rain {
+  .animate(keeprain, 1s, linear, 10.8s, infinite);
+  background: url(images/rain1.png) no-repeat 0 -800px;
+  height: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  top: 67px;
+  width: 227px;
+  
+  div {
+    /*-moz-animation: startrain 2s ease-in 0s 1 forwards, keeprain 1s linear 2s infinite;*/
+    .animate(startrain, 1.8s, ease-in, 9s, 1);
+    background: url(images/rain1.png) repeat-y 0 100%;
+    height: 800px;
+    left: 0;
+    position: absolute;
+    top: -800px;
+    width: 100%;
+  }
+}

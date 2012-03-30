@@ -1,0 +1,172 @@
+/*
+ * Functions
+ */
+/* Animation */
+/*  animation: [<name> || <duration> || <timing-function> || <delay> || <iteration-count> || <direction> || <fill-mode>] */
+/* key Frames */
+@-moz-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes startrain {
+  0% {
+    top: -800px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+@-webkit-keyframes startrain {
+  0% {
+    top: -800px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+@-moz-keyframes keeprain {
+  0% {
+    background-position: -212px 100%;
+  }
+  100% {
+    background-position: -212px 0;
+  }
+}
+@-webkit-keyframes keeprain {
+  0% {
+    background-position: -212px 100%;
+  }
+  100% {
+    background-position: -212px 0;
+  }
+}
+/* Style */
+body {
+  background: url(images/field.png) no-repeat center top;
+}
+.cloud {
+  opacity: 0;
+  position: absolute;
+}
+#clouds {
+  margin: 0 auto;
+  position: relative;
+  width: 230px;
+}
+#cloud-1 {
+  -moz-animation: fadein 3s linear 0s 1 normal forwards;
+  -ms-animation: fadein 3s linear 0s 1 normal forwards;
+  -o-animation: fadein 3s linear 0s 1 normal forwards;
+  -webkit-animation: fadein 3s linear 0s 1 normal forwards;
+  animation: fadein 3s linear 0s 1 normal forwards;
+  background: url(images/cloud1.png) no-repeat 0 0;
+  height: 49px;
+  left: 11px;
+  top: 40px;
+  width: 69px;
+  z-index: 1;
+}
+#cloud-2 {
+  -moz-animation: fadein 4.5s linear 0s 1 normal forwards;
+  -ms-animation: fadein 4.5s linear 0s 1 normal forwards;
+  -o-animation: fadein 4.5s linear 0s 1 normal forwards;
+  -webkit-animation: fadein 4.5s linear 0s 1 normal forwards;
+  animation: fadein 4.5s linear 0s 1 normal forwards;
+  background: url(images/cloud2.png) no-repeat 0 0;
+  height: 45px;
+  left: 126px;
+  top: 40px;
+  width: 76px;
+  z-index: 2;
+}
+#cloud-3 {
+  -moz-animation: fadein 3s linear 0s 1 normal forwards;
+  -ms-animation: fadein 3s linear 0s 1 normal forwards;
+  -o-animation: fadein 3s linear 0s 1 normal forwards;
+  -webkit-animation: fadein 3s linear 0s 1 normal forwards;
+  animation: fadein 3s linear 0s 1 normal forwards;
+  background: url(images/cloud3.png) no-repeat 0 0;
+  height: 70px;
+  left: 107px;
+  top: 22px;
+  width: 107px;
+  z-index: 3;
+}
+#cloud-4 {
+  -moz-animation: fadein 6s linear 1s 1 normal forwards;
+  -ms-animation: fadein 6s linear 1s 1 normal forwards;
+  -o-animation: fadein 6s linear 1s 1 normal forwards;
+  -webkit-animation: fadein 6s linear 1s 1 normal forwards;
+  animation: fadein 6s linear 1s 1 normal forwards;
+  background: url(images/cloud4.png) no-repeat 0 0;
+  height: 106px;
+  left: 64px;
+  top: 4px;
+  width: 121px;
+  z-index: 4;
+}
+#cloud-5 {
+  -moz-animation: fadein 8s linear 2s 1 normal forwards;
+  -ms-animation: fadein 8s linear 2s 1 normal forwards;
+  -o-animation: fadein 8s linear 2s 1 normal forwards;
+  -webkit-animation: fadein 8s linear 2s 1 normal forwards;
+  animation: fadein 8s linear 2s 1 normal forwards;
+  background: url(images/cloud5.png) no-repeat 0 0;
+  height: 104px;
+  opacity: 0;
+  width: 227px;
+  z-index: 5;
+}
+#rain {
+  -moz-animation: keeprain 1s linear 10.8s infinite normal none;
+  -ms-animation: keeprain 1s linear 10.8s infinite normal none;
+  -o-animation: keeprain 1s linear 10.8s infinite normal none;
+  -webkit-animation: keeprain 1s linear 10.8s infinite normal none;
+  animation: keeprain 1s linear 10.8s infinite normal none;
+  background: url(images/rain1.png) no-repeat 0 -800px;
+  height: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  top: 67px;
+  width: 227px;
+}
+#rain div {
+  /*-moz-animation: startrain 2s ease-in 0s 1 forwards, keeprain 1s linear 2s infinite;*/
+
+  -moz-animation: startrain 1.8s ease-in 9s 1 normal none;
+  -ms-animation: startrain 1.8s ease-in 9s 1 normal none;
+  -o-animation: startrain 1.8s ease-in 9s 1 normal none;
+  -webkit-animation: startrain 1.8s ease-in 9s 1 normal none;
+  animation: startrain 1.8s ease-in 9s 1 normal none;
+  background: url(images/rain1.png) repeat-y 0 100%;
+  height: 800px;
+  left: 0;
+  position: absolute;
+  top: -800px;
+  width: 100%;
+}
